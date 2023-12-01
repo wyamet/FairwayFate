@@ -57,6 +57,13 @@ function saveSelectedClubs(clubs) {
   // This could involve setting them in local storage or sending them to a server
 }
 
+// Function to be called after successful login or signup
+function onSuccessfulLoginOrSignup() {
+  // Hide user forms and show the bag selection section
+  document.getElementById("user-forms").style.display = "none";
+  document.getElementById("bag-selection").style.display = "block";
+}
+
 // Login form submission handling
 document
   .getElementById("loginForm")
@@ -72,4 +79,42 @@ document
 
     // Add AJAX request or other methods to send data to the server
     // Note: Replace this with actual server communication logic
+    onSuccessfulLoginOrSignup(); // Simulate successful login
   });
+
+// Signup form submission handling
+document
+  .getElementById("signupForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevents the default form submission action
+
+    // Signup logic here
+    var name = document.getElementById("signupName").value;
+    var email = document.getElementById("signupEmail").value;
+    var password = document.getElementById("signupPassword").value;
+    var confirmPassword = document.getElementById(
+      "signupConfirmPassword"
+    ).value;
+
+    // Example: Print signup data to the console
+    console.log(
+      "Name:",
+      name,
+      "Email:",
+      email,
+      "Password:",
+      password,
+      "Confirm Password:",
+      confirmPassword
+    );
+
+    // Add AJAX request or other methods to send data to the server
+    // Note: Replace this with actual server communication logic
+    onSuccessfulLoginOrSignup(); // Simulate successful signup
+  });
+
+// Function to show the spin wheel section
+function showSpinWheel() {
+  document.getElementById("bag-selection").style.display = "none";
+  document.getElementById("wheel-section").style.display = "block";
+}
