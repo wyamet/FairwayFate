@@ -56,3 +56,20 @@ function saveSelectedClubs(clubs) {
   // Implement logic to save selected clubs
   // This could involve setting them in local storage or sending them to a server
 }
+
+// Login form submission handling
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevents the default form submission action
+
+    // Login logic here
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Example: Print username and password to the console
+    console.log("Username:", username, "Password:", password);
+
+    // Add AJAX request or other methods to send data to the server
+    // Note: Replace this with actual server communication logic
+  });
