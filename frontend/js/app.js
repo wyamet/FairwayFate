@@ -2,25 +2,22 @@
 
 // Function to show the login form
 function showLoginForm() {
-  // Hide other sections
-  document.getElementById("bag-selection").style.display = "none";
+  document.getElementById("bag-list").style.display = "none";
   document.getElementById("wheel-section").style.display = "none";
-  // Logic to show login form
 }
 
 // Function to show the signup form
 function showSignupForm() {
-  // Hide other sections
-  document.getElementById("bag-selection").style.display = "none";
+  document.getElementById("bag-list").style.display = "none";
   document.getElementById("wheel-section").style.display = "none";
-  // Logic to show signup form
 }
 
 // Function to continue without login
 function continueWithoutLogin() {
-  // Hide user forms and show the bag selection section
   document.getElementById("user-forms").style.display = "none";
-  document.getElementById("bag-selection").style.display = "block";
+  document.getElementById("hero").style.display = "none";
+  document.getElementById("bag-list").style.display = "block";
+  loadBags();
 }
 
 // Handle the club selection form submission
@@ -47,37 +44,47 @@ function retrieveSelectedClubsFromForm() {
 // Function to validate selected clubs
 function validateClubs(clubs) {
   // Implement validation logic
-  // For example, check if the correct number of clubs is selected
-  return true;
+  return true; // Example: Always return true for now
 }
 
 // Function to save selected clubs
 function saveSelectedClubs(clubs) {
   // Implement logic to save selected clubs
-  // This could involve setting them in local storage or sending them to a server
 }
 
 // Function to be called after successful login or signup
 function onSuccessfulLoginOrSignup() {
-  // Hide user forms and show the bag selection section
   document.getElementById("user-forms").style.display = "none";
-  document.getElementById("bag-selection").style.display = "block";
+  document.getElementById("hero").style.display = "none";
+  document.getElementById("bag-list").style.display = "block";
+  loadBags();
+}
+
+// Function to load and display bags
+function loadBags() {
+  // Example: Add static bags for now
+  const bagsContainer = document.getElementById("bags");
+  bagsContainer.innerHTML = ""; // Clear existing content
+  for (let i = 1; i <= 5; i++) {
+    const bagDiv = document.createElement("div");
+    bagDiv.innerHTML = `Bag ${i}`;
+    bagsContainer.appendChild(bagDiv);
+  }
+}
+
+// Function to show the spin wheel section
+function selectBagForSpin() {
+  document.getElementById("bag-list").style.display = "none";
+  document.getElementById("wheel-section").style.display = "block";
+  // Additional logic to set up the spin wheel with the selected bag's clubs
 }
 
 // Login form submission handling
 document
   .getElementById("loginForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevents the default form submission action
-
-    // Login logic here
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-
+    event.preventDefault();
     // Example: Print username and password to the console
-    console.log("Username:", username, "Password:", password);
-
-    // Add AJAX request or other methods to send data to the server
     // Note: Replace this with actual server communication logic
     onSuccessfulLoginOrSignup(); // Simulate successful login
   });
@@ -86,35 +93,8 @@ document
 document
   .getElementById("signupForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevents the default form submission action
-
-    // Signup logic here
-    var name = document.getElementById("signupName").value;
-    var email = document.getElementById("signupEmail").value;
-    var password = document.getElementById("signupPassword").value;
-    var confirmPassword = document.getElementById(
-      "signupConfirmPassword"
-    ).value;
-
+    event.preventDefault();
     // Example: Print signup data to the console
-    console.log(
-      "Name:",
-      name,
-      "Email:",
-      email,
-      "Password:",
-      password,
-      "Confirm Password:",
-      confirmPassword
-    );
-
-    // Add AJAX request or other methods to send data to the server
     // Note: Replace this with actual server communication logic
     onSuccessfulLoginOrSignup(); // Simulate successful signup
   });
-
-// Function to show the spin wheel section
-function showSpinWheel() {
-  document.getElementById("bag-selection").style.display = "none";
-  document.getElementById("wheel-section").style.display = "block";
-}
