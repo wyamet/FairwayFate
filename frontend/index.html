@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golf Bag Selection</title>
+    <!-- Bootstrap CSS for styling -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- Login/Signup Section -->
+      <div id="user-forms">
+        <button class="btn btn-primary" onclick="showLoginForm()">
+          Log In
+        </button>
+        <button class="btn btn-secondary" onclick="showSignupForm()">
+          Sign Up
+        </button>
+        <button class="btn btn-info" onclick="continueWithoutLogin()">
+          Continue Without Login
+        </button>
+      </div>
+
+      <!-- Bag Selection Section (hidden initially) -->
+      <div id="bag-selection" style="display: none">
+        <h2>Select Your Clubs</h2>
+        <!-- Form for selecting clubs -->
+        <form id="club-selection-form">
+          <!-- Add your input fields for selecting different clubs here -->
+          <button type="submit" class="btn btn-success">Save Bag</button>
+        </form>
+      </div>
+
+      <!-- Wheel Section (hidden initially) -->
+      <div id="wheel-section" style="display: none">
+        <h2>Shuffle Clubs</h2>
+        <div id="wheel">
+          <!-- Placeholder for the wheel -->
+          <img src="images/wheel.png" alt="Selection Wheel" />
+        </div>
+        <button class="btn btn-danger" onclick="spinWheel()">Spin</button>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Your custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/wheel.js"></script>
+  </body>
+</html>
