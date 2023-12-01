@@ -3,28 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golf Bag Selection</title>
+    <title>FairwayFate</title>
     <!-- Bootstrap CSS for styling -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
     <!-- Your custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="container mt-5">
-      <!-- Login/Signup Section -->
-      <div id="user-forms">
-        <button class="btn btn-primary" onclick="showLoginForm()">
-          Log In
-        </button>
-        <button class="btn btn-secondary" onclick="showSignupForm()">
-          Sign Up
-        </button>
-        <button class="btn btn-info" onclick="continueWithoutLogin()">
-          Continue Without Login
-        </button>
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="hero text-center">
+        <img
+          src="assets/images/Fairway.webp"
+          alt="Hero Image"
+          class="hero-image"
+        />
+        <div class="hero-content">
+          <h1>Welcome to FairwayFate</h1>
+          <p>Let the gods decide</p>
+          <div id="user-forms">
+            <button class="btn btn-transparent" onclick="showLoginForm()">
+              Log In
+            </button>
+            <button class="btn btn-transparent" onclick="showSignupForm()">
+              Sign Up
+            </button>
+            <button
+              class="btn btn-transparent"
+              onclick="continueWithoutLogin()"
+            >
+              Continue Without Login
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Bag Selection Section (hidden initially) -->
